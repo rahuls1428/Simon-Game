@@ -1,0 +1,108 @@
+body {
+  text-align: center;
+  background-color: #011f3f;
+}
+
+#level-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 3rem;
+  margin: 2%;
+  color: #fef2bf;
+  line-height: 1.5;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+.btn {
+  margin: 20px;
+  display: inline-block;
+  height: 225px;
+  width: 225px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+@media (max-width: 584px) {
+  #level-title {
+    font-size: 2.5rem;
+    margin-bottom: 5%;
+  }
+  .btn {
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+  }
+}
+
+/* dded animation class if button is clicked */
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+/* if wrong button color is pressed apply this css style */
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+/* button repeat pattern */
+.btn-repeat-pattern {
+  color: #fff;
+  transition: all 0.5s;
+  position: relative;
+  margin: auto 45%;
+  cursor: pointer;
+}
+.btn-repeat-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+.btn-repeat-pattern:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+.btn-repeat-pattern::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.2, 1.2);
+}
+.btn-repeat-pattern:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
